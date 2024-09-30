@@ -29,7 +29,8 @@ function sortear(){
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados} </label>`
 
-    alterarStatusBotao();
+    alterarStatusBotaoR();
+    alterarStatusBotaoS();
 };
 
 function obterNumero(min, max){
@@ -42,16 +43,28 @@ function reiniciar(){
     document.getElementById('ate').value = '';
     document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
 
-    alterarStatusBotao();
+    alterarStatusBotaoR();
+    alterarStatusBotaoS();
 }
 
-function alterarStatusBotao(){
-    let botao = document.getElementById('btn-reiniciar');
-    if(botao.classList.contains('container__botao-desabilitado')){
-        botao.classList.remove('container__botao-desabilitado');
-        botao.classList.add('container__botao');
+function alterarStatusBotaoR(){
+    let botao1 = document.getElementById('btn-reiniciar');
+    if(botao1.classList.contains('container__botao-desabilitado')){
+        botao1.classList.remove('container__botao-desabilitado');
+        botao1.classList.add('container__botao');
     } else{
-        botao.classList.remove('container__botao');
-        botao.classList.add('container__botao-desabilitado');
+        botao1.classList.remove('container__botao');
+        botao1.classList.add('container__botao-desabilitado');
+    };
+}
+
+function alterarStatusBotaoS(){
+    let botao2 = document.getElementById('btn-sortear');
+    if(botao2.classList.contains('container__botao')){
+        botao2.classList.remove('container__botao');
+        botao2.classList.add('container__botao-desabilitado');
+    } else{
+        botao2.classList.remove('container__botao-desabilitado');
+        botao2.classList.add('container__botao');
     };
 }
